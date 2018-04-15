@@ -1,0 +1,54 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dsclab-vnet-name": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "variables": {
+    "dsclab-vnet-prefix": "172.16.0.0/16",
+    "dsclab-vnet-subnet1": "dsclab-vnet-subnet-1",
+    "dsclab-vnet-subnet1Prefix": "172.16.1.0/24",
+    "dsclab-vnet-subnet2": "dsclab-vnet-subnet-2",
+    "dsclab-vnet-subnet2Prefix": "172.16.2.0/24"
+
+  },
+  "resources": [
+    {
+      "name": "[parameters('dsclab-vnet-name')]",
+      "type": "Microsoft.Network/virtualNetworks",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2016-03-30",
+      "dependsOn": [],
+      "tags": {
+        "displayName": "[parameters('dsclab-vnet-name')]"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[variables('dsclab-vnet-prefix')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "[variables('dsclab-vnet-subnet1')]",
+            "properties": {
+              "addressPrefix": "[variables('dsclab-vnet-subnet1Prefix')]"
+            }
+          },
+          {
+            "name": "[variables('dsclab-vnet-subnet2')]",
+            "properties": {
+              "addressPrefix": "[variables('dsclab-vnet-subnet2Prefix')]"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {
+
+  }
+}

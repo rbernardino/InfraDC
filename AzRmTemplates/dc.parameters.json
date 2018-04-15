@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnet-name": {
+      "value": "dsclab-vnet"
+    },
+    "vmName": {
+      "value": "dc01"
+    },
+    "vmAdminUserName": {
+      "value": "WinAdmin"
+    },
+    "vmWindowsOSVersion": {
+      "value": "2012-R2-Datacenter"
+    },
+    "vmPublicIpDnsName": {
+      "value": "dsclab-dc01"
+    },
+    "storageAccountName": {
+      "value": "dcstoragestd"
+    }
+  }
+}

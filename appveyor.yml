@@ -1,0 +1,21 @@
+version: 1.0.{build}
+skip_commits:
+  message: /updated readme.*|update readme.*s/
+environment:
+  azure_appid:
+    secure: MnpXyTX9zASgkurGV9Drec+zbS+7IsMDXjScV7IPE/e+1GSSmwnRRLJuNU3mMokq
+  azure_tenantid:
+    secure: MP2RucCO+CDuZGRzml2p/VZQhoMvKXFshQZK8hFnR2T9ZcXelsL9CeuOT6pEFr8a
+  azure_pass:
+    secure: uIZbMJ8azhkePeTHOq0XqAUhZPCJZcCPCTMUK5XSCFdU2iXoVDKX73R9v199jzEX
+  azure_subscriptionid:
+    secure: +kcRf9OTrhYDvnpsrqKya1UHSFmm7l5/XclvyzJ46v0yZuGgsVaFWe7D87LL8h7T
+  vm_admin_pass:
+    secure: OnyWqRxf4yUA+z8hGUhc/A==
+image: WMF 5
+install:
+- ps: .\InfraDC\buildscripts\install.ps1
+build_script:
+- ps: .\InfraDC\buildscripts\build.ps1
+test_script:
+- ps: .\InfraDC\buildscripts\test.ps1
