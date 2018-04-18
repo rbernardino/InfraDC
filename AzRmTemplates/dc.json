@@ -54,7 +54,8 @@
     "dscModulesUrl": "https://dsclabstoragestd.blob.core.windows.net/windows-powershell-dsc/NewDomain.ps1.zip",
     "scriptFile": "NewDomain.ps1",
     "initScript": "NewDomain",
-    "configDataFileUrl": "https://dsclabstoragestd.blob.core.windows.net/windows-powershell-dsc/NewDomain.psd1"
+    "configDataFileUrl": "https://dsclabstoragestd.blob.core.windows.net/windows-powershell-dsc/NewDomain.psd1",
+    "privateIp": "172.16.1.4"
   },
   "resources": [
     {
@@ -73,7 +74,8 @@
           {
             "name": "ipconfig1",
             "properties": {
-              "privateIPAllocationMethod": "Dynamic",
+              "privateIPAllocationMethod": "Static",
+              "privateIPAddress": "[variables('privateIp')]",
               "subnet": {
                 "id": "[variables('vmSubnet')]"
               },
