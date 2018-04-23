@@ -43,7 +43,7 @@
     "vmImagePublisher": "MicrosoftWindowsServer",
     "vmImageOffer": "WindowsServer",
     "vmOSDiskName": "dc01-OsDisk",
-    "vmSize": "Standard_A1",
+    "vmSize": "Standard_B1S",
     "vmStorageAccountContainerName": "vhds",
     "vmPublicIpName": "dc01-public-ip",
     "vmNicName": "[concat(parameters('vmName'), '-', 'nic-0')]",
