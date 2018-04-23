@@ -10,8 +10,8 @@ configuration NewTestEnvironment
     ResourceGroupName     = 'dsclab-automation-rg'
     AutomationAccountName = 'dsclab-automation'
   }
-  $defaultAdUserCred = Get-AutomationPSCredential -Name 'Default AD User Password'
-  $domainSafeModeCred = Get-AutomationPSCredential -Name 'Domain safe mode'
+  $defaultAdUserCred = Get-AzureRmAutomationCredential -Name 'Default AD User Password' @credParams
+  $domainSafeModeCred = Get-AzureRmAutomationCredential -Name 'Domain safe mode' @credParams
 
   Node $AllNodes.where( { $_.Purpose -eq 'Domain Controller' }).NodeName
   {
