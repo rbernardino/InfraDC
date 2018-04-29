@@ -47,7 +47,10 @@
           {
             "name": "dc",
             "properties": {
-              "addressPrefix": "172.16.3.0/24"
+              "addressPrefix": "172.16.3.0/24",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg_winrm')]"
+              }
             }
           },
           {
