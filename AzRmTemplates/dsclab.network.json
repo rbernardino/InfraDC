@@ -43,6 +43,24 @@
             "properties": {
               "addressPrefix": "[variables('dsclab-vnet-subnet2Prefix')]"
             }
+          },
+          {
+            "name": "dc",
+            "properties": {
+              "addressPrefix": "172.16.3.0/24"
+            }
+          },
+          {
+            "name": "web",
+            "properties": {
+              "addressPrefix": "172.16.4.0/24"
+            }
+          },
+          {
+            "name": "mgmt",
+            "properties": {
+              "addressPrefix": "172.16.5.0/24"
+            }
           }
         ]
       }
