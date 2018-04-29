@@ -28,6 +28,11 @@
             "[variables('dsclab-vnet-prefix')]"
           ]
         },
+        "dhcpOptions": {
+          "dnsServers": [
+            "172.16.3.4"
+          ]
+        },
         "subnets": [          
           {
             "name": "dc",
