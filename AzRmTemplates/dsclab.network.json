@@ -9,10 +9,6 @@
   },
   "variables": {
     "dsclab-vnet-prefix": "172.16.0.0/16",
-    "dsclab-vnet-subnet1": "dsclab-vnet-subnet-1",
-    "dsclab-vnet-subnet1Prefix": "172.16.1.0/24",
-    "dsclab-vnet-subnet2": "dsclab-vnet-subnet-2",
-    "dsclab-vnet-subnet2Prefix": "172.16.2.0/24",
     "nsg_winrm": "nsg_winrm"
 
   },
@@ -32,19 +28,7 @@
             "[variables('dsclab-vnet-prefix')]"
           ]
         },
-        "subnets": [
-          {
-            "name": "[variables('dsclab-vnet-subnet1')]",
-            "properties": {
-              "addressPrefix": "[variables('dsclab-vnet-subnet1Prefix')]"
-            }
-          },
-          {
-            "name": "[variables('dsclab-vnet-subnet2')]",
-            "properties": {
-              "addressPrefix": "[variables('dsclab-vnet-subnet2Prefix')]"
-            }
-          },
+        "subnets": [          
           {
             "name": "dc",
             "properties": {
