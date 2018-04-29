@@ -12,7 +12,8 @@
     "dsclab-vnet-subnet1": "dsclab-vnet-subnet-1",
     "dsclab-vnet-subnet1Prefix": "172.16.1.0/24",
     "dsclab-vnet-subnet2": "dsclab-vnet-subnet-2",
-    "dsclab-vnet-subnet2Prefix": "172.16.2.0/24"
+    "dsclab-vnet-subnet2Prefix": "172.16.2.0/24",
+    "nsg_winrm": "nsg_winrm"
 
   },
   "resources": [
@@ -49,7 +50,7 @@
             "properties": {
               "addressPrefix": "172.16.3.0/24",
               "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg_winrm')]"
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg_winrm'))]"
               }
             }
           },
@@ -69,10 +70,13 @@
       }
     },
     {
-      "name": "nsg_winrm",
+      "name": "[variables('nsg_winrm')]",
       "apiVersion": "2018-01-01",
       "type": "Microsoft.Network/networkSecurityGroups",
       "location": "[resourceGroup().location]",
+      "tags": {
+        "displayName": "variables('nsg_winrm')"
+      },
       "properties": {
         "securityRules": [
           {
