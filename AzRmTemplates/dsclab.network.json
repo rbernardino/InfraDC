@@ -64,6 +64,33 @@
           }
         ]
       }
+    },
+    {
+      "name": "nsg_winrm",
+      "apiVersion": "2018-01-01",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "winrm",
+            "properties": {
+              "priority": "100",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "5986",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          }
+        ]
+      }
     }
   ],
   "outputs": {
