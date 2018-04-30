@@ -9,7 +9,7 @@
   },
   "variables": {
     "dsclab-vnet-prefix": "172.16.0.0/16",
-    "nsg_winrm": "nsg_winrm"
+    "nsg-frontEnd": "nsg-frontEnd"
 
   },
   "resources": [
@@ -33,13 +33,13 @@
             "172.16.3.4"
           ]
         },
-        "subnets": [          
+        "subnets": [
           {
             "name": "dc",
             "properties": {
               "addressPrefix": "172.16.3.0/24",
               "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg_winrm'))]"
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsg-frontEnd'))]"
               }
             }
           },
@@ -59,17 +59,17 @@
       }
     },
     {
-      "name": "[variables('nsg_winrm')]",
+      "name": "[variables('nsg-frontEnd')]",
       "apiVersion": "2018-01-01",
       "type": "Microsoft.Network/networkSecurityGroups",
       "location": "[resourceGroup().location]",
       "tags": {
-        "displayName": "variables('nsg_winrm')"
+        "displayName": "[variables('nsg-frontEnd')]"
       },
       "properties": {
         "securityRules": [
           {
-            "name": "winrm",
+            "name": "WinRm-Allow",
             "properties": {
               "priority": "100",
               "protocol": "Tcp",
