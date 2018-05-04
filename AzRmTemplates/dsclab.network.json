@@ -84,6 +84,23 @@
               "sourceAddressPrefixes": [],
               "destinationAddressPrefixes": []
             }
+          },
+          {
+            "name": "RDP-Allow",
+            "properties": {
+              "priority": "110",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "VirtualNetwork",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
           }
         ]
       }
