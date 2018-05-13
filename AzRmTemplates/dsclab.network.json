@@ -54,6 +54,12 @@
             "properties": {
               "addressPrefix": "172.16.5.0/24"
             }
+          },
+          {
+            "name": "web-lx",
+            "properties": {
+              "addressPrefix": "172.16.6.0/24"
+            }
           }
         ]
       }
