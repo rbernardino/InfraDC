@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vnet-name": {
-      "value": "dsclab-vnet"
+      "value": "onprem-vnet"
     },
     "vmName": {
       "value": "dc01"
@@ -18,7 +18,7 @@
       "value": "2012-R2-Datacenter"
     },
     "vmPublicIpDnsName": {
-      "value": "dsclab-dc01"
+      "value": "onprem-dc01"
     },
     "storageAccountName": {
       "value": "dcstoragestd"
