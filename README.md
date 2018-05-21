@@ -1,5 +1,5 @@
-# Infrastructure As Code with Microsoft Azure
-A proof of concept for implementing Infrastructure As Code using Microsoft Azure.
+# Infrastructure as a Service with Microsoft Azure
+A proof of concept (POC) for implementing a hybrid IT environment using Microsoft Azure'a IaaS. This repo simulates an on-premises domain controller.
 
 To be able to run successful Appveyor builds, you need to configure WinRM to enable PowerShell remoting after you provisioned the VM in Azure. For the complete guide, please refer to this [link](https://blogs.technet.microsoft.com/uktechnet/2016/02/11/configuring-winrm-over-https-to-enable-powershell-remoting/). The ```Deploy-InfraDC.ps1``` helper script can serve as a starting point in provisioning the necessary resources in Azure.
 
