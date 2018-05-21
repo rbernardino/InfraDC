@@ -4,17 +4,14 @@
   "parameters": {
     "vnet-name": {
       "type": "string",
-      "minLength": 1,
-      "defaultValue": "dsclab-vnet"
+      "minLength": 1
     },
     "vmName": {
       "type": "string",
-      "defaultValue": "dc01",
       "minLength": 1
     },
     "vmAdminUserName": {
       "type": "string",
-      "defaultValue": "WinAdmin",
       "minLength": 1
     },
     "vmAdminPassword": {
@@ -32,7 +29,6 @@
     },
     "vmPublicIpDnsName": {
       "type": "string",
-      "defaultValue": "dsclab-dc01",
       "minLength": 1
     },
     "storageAccountName": {
