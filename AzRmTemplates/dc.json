@@ -4,18 +4,30 @@
   "parameters": {
     "vnet-name": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "metadata": {
+        "description": "The virtual network where this Virtual Machine will be placed"
+      }
     },
     "vmName": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "metadata": {
+        "description": "The Virtual Machine's hostname."
+      }
     },
     "vmAdminUserName": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "metadata": {
+        "description": "Username for the Virtual Machine."
+      }
     },
     "vmAdminPassword": {
-      "type": "securestring"
+      "type": "securestring",
+      "metadata": {
+        "description": "Password for the Virtual Machine."
+      }
     },
     "vmWindowsOSVersion": {
       "type": "string",
@@ -25,14 +37,23 @@
         "2012-Datacenter",
         "2012-R2-Datacenter",
         "Windows-Server-Technical-Preview"
-      ]
+      ],
+      "metadata": {
+        "description": "The Windows OS version of the Virtual Machine."
+      }
     },
     "vmPublicIpDnsName": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "metadata": {
+        "description": "The DNS name for this Virtual Machine's public ip."
+      }
     },
     "storageAccountName": {
-      "type": "string"
+      "type": "string",
+      "metadata": {
+        "description": "The storage account name for this Virtual Machine."
+      }
     }
   },
   "variables": {
