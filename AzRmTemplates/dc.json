@@ -54,18 +54,30 @@
       "metadata": {
         "description": "The storage account name for this Virtual Machine."
       }
+    },
+    "vmSize": {
+      "type": "string",
+      "metadata": {
+        "description": "The size or SKU of the Virtual Machine."
+      }
+    },
+    "vmSubnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "The subnet where this Virtual Machine will be placed."
+      }
     }
   },
   "variables": {
     "vmImagePublisher": "MicrosoftWindowsServer",
     "vmImageOffer": "WindowsServer",
-    "vmOSDiskName": "dc01-OsDisk",
-    "vmSize": "Standard_B1S",
-    "vmPublicIpName": "dc01-public-ip",
+    "vmOSDiskName": "[concat(parameters('vmName'), '-OsDisk')]",
+    "vmSize": "[parameters('vmSize')]",
+    "vmPublicIpName": "[concat(parameters('vmName'), '-public-ip')]",
     "vmNicName": "[concat(parameters('vmName'), '-', 'nic-0')]",
-    "vm-subnet-name": "dc",
-    "networkResource": "dsclabNetwork",
-    "vmSubnetRef": "[resourceId( variables('networkResource'), 'Microsoft.Network/virtualNetworks', parameters('vnet-name') )]",
+    "vm-subnet-name": "[parameters('vmSubnetName')]",
+    "networkResourceGroup": "onPremNetwork",
+    "vmSubnetRef": "[resourceId( variables('networkResourceGroup'), 'Microsoft.Network/virtualNetworks', parameters('vnet-name') )]",
     "vmSubnet": "[concat(variables('vmSubnetRef'), '/subnets/', variables('vm-subnet-name'))]",
     "privateIp": "172.16.3.4"
   },

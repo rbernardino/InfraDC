@@ -8,6 +8,9 @@
     "vmName": {
       "value": "dc01"
     },
+    "vmSize": {
+      "value": "Standard_B1S"
+    },
     "vmAdminUserName": {
       "value": "WinAdmin"
     },
@@ -19,6 +22,9 @@
     },
     "storageAccountName": {
       "value": "dcstoragestd"
+    },
+    "vmSubnetName": {
+      "value": "onprem-dc"
     }
   }
 }
