@@ -44,17 +44,12 @@
     "vmImageOffer": "WindowsServer",
     "vmOSDiskName": "dc01-OsDisk",
     "vmSize": "Standard_B1S",
-    "vmStorageAccountContainerName": "vhds",
     "vmPublicIpName": "dc01-public-ip",
     "vmNicName": "[concat(parameters('vmName'), '-', 'nic-0')]",
     "vm-subnet-name": "dc",
     "networkResource": "dsclabNetwork",
     "vmSubnetRef": "[resourceId( variables('networkResource'), 'Microsoft.Network/virtualNetworks', parameters('vnet-name') )]",
     "vmSubnet": "[concat(variables('vmSubnetRef'), '/subnets/', variables('vm-subnet-name'))]",
-    "dscModulesUrl": "https://dsclabstoragestd.blob.core.windows.net/windows-powershell-dsc/NewDomain.ps1.zip",
-    "scriptFile": "NewDomain.ps1",
-    "initScript": "NewDomain",
-    "configDataFileUrl": "https://dsclabstoragestd.blob.core.windows.net/windows-powershell-dsc/NewDomain.psd1",
     "privateIp": "172.16.3.4"
   },
   "resources": [
