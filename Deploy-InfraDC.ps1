@@ -61,8 +61,8 @@ break
 #region Deploy the VM
 {
   $location = 'Southeast Asia'
-  $resourceGroupName = 'dscLabDCs'
-  $resourceDeploymentName = 'dscLabDCs-deployment'
+  $resourceGroupName = 'onPremDCs'
+  $resourceDeploymentName = 'onPremDCs-deployment'
   $templateFile = '.\AzRmTemplates\dc.json'
   $templateParameterFile = '.\AzRmTemplates\dc.parameters.json'
 
