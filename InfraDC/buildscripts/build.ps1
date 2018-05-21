@@ -1,7 +1,8 @@
 try {
 	$ErrorActionPreference = 'Stop'
 
-	$azrVmName = 'dc01'
+  $azrVmName = 'dc01'
+  $resourceGroupName = 'onPremDCs'
 
 	## Authenticate to Azure here because we'll be using Azure Automation DSC
 	Write-Host 'Authenticating to Azure...'
@@ -21,7 +22,7 @@ try {
 
 	## Start up the test VM if it's not already
 	Write-Host 'Starting test VM...'
-	$null = Get-AzureRmVM -Name $azrVmName -ResourceGroupName 'dsclabdcs' | Start-AzureRmVM
+	$null = Get-AzureRmVM -Name $azrVmName -ResourceGroupName $resourceGroupName | Start-AzureRmVM
 
   $automationAccount = 'dsclab-automation'
   $automationAccountRg = 'dsclab-automation-rg'
