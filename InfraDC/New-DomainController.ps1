@@ -1,4 +1,4 @@
-configuration NewTestEnvironment
+configuration New-DomainController
 {
   Import-DscResource -ModuleName xActiveDirectory
 
