@@ -6,9 +6,11 @@ To be able to run successful Appveyor builds, you need to configure WinRM to ena
 ## Other related repos
 [Management Tier](https://github.com/rbernardino/InfraClient)
 
-[Network Tier](https://github.com/rbernardino/InfraNetworking)
+[Networking Tier](https://github.com/rbernardino/InfraNetworking)
 
-Web Tier (TODO)
+[WebSphere Application Server Tier](https://github.com/rbernardino/InfraWebSphere)
+
+[Web Tier](https://github.com/rbernardino/InfraWeb)
 
 ## Resources
 [TestDomainCreator](https://github.com/adbertram/TestDomainCreator)
